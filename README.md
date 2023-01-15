@@ -1,5 +1,6 @@
 # Breast Cancer Recurrence Prediction using Machine Learning
-Breast cancer is the most commonly diagnosed cancer among women around the world.<br>In 2020 there were more than 2.26 million new cases of breast cancer worldwide and are estimated to grow in the future.<br><br>On average, 7% to 11% of women experience recurrence within 10 years.
+Breast cancer is the most commonly diagnosed cancer among women around the world.<br>In 2020 there were more than 2.26 million new cases of breast cancer worldwide and are estimated to grow in the future.<br><br>**On average, 7% to 11% of women experience recurrence within 10 years.**<br><br>
+<img src="https://media.springernature.com/w735h400/nature-cms/uploads/cms/pages/1997/top_item_image/breastcancer_hero_01-34debb425f7e3e9fab5bf94575b49234.jpg" width="250">
 ## Key Informations about Breast Cancer
 ### What Causes Breast Cancer?
 There are many risk factors known to cause breast cancer such as lifestyle-related risk factors and changes or mutations in genes. Certain inherited gene changes can greatly increase the risk for developing certain cancers.<br>The BRCA genes (*BRCA1 and BRCA2*) are tumor suppressor genes, a mutation in these genes can interupt the task to suppress abnormal cell growth, and cancer is more likely to develop.
@@ -17,9 +18,13 @@ Chemotherapy uses anti-cancer drugs that may be given intravenously or by mouth.
 ### Follow-up Care After Breast Cancer Treatment
 *"On average, 7% to 11% of women experience recurrence within 10 years."*<br>
 For some women with advanced breast cancer, the cancer may never go away completely. Follow-up care after Breast Cancer treatment can diagnose in time a recurrence of the cancer.<br><br> 
-*It’s important to know that women who have had breast cancer can also still get other types of cancer, so it’s important to follow the <a href="https://www.cancer.org/healthy/find-cancer-early/american-cancer-society-guidelines-for-the-early-detection-of-cancer.html">American Cancer Society guidelines for the early detection of cancer</a>, such as those for colorectal cancer and cervical cancer.*
+*It’s important to know that women who have had breast cancer can also still get other types of cancer, so it’s important to follow the <a href="https://www.cancer.org/healthy/find-cancer-early/american-cancer-society-guidelines-for-the-early-detection-of-cancer.html" target='_blank'>American Cancer Society guidelines for the early detection of cancer</a>, such as those for colorectal cancer and cervical cancer.*
 <br><br>
 ## Using Machine Learning to Predict the Recurrence of Breast Cancer
+<img src="https://openexpoeurope.com/wp-content/uploads/2019/03/ai.png" width="400">
+
+### Supervised Data
+### Classification Model
 
 
 <br>
