@@ -31,9 +31,9 @@ The dataset used for this model includes 286 instances of patient data collected
 - *Class*: whether or not there have been recurrence of the cancer
 - *Age*: patient's age at the time of diagnosis
 - *Monopause*: menopausal status of the patient at the time of diagnosis, pre-menopausal or post-menopausal at the time of diagnosis:
--- *ge40*: no further details have been provided
--- *lt40*: no further details have been provided
--- *premeno*: if the patient was on pre-menopause at the time of diagnosis
+  - *ge40*: no further details have been provided
+  - *lt40*: no further details have been provided
+  - *premeno*: if the patient was on pre-menopause at the time of diagnosis
 - *Tumor Size*: size of tumor (mm) at the time of diagnosis
 - *Invasive Nodes*: the total number of lymph nodes confirming Breast Cancer at the time of the histological examination
 - *Node Caps*: whether the tumor penetrated in the lymph node capsule
@@ -41,8 +41,8 @@ The dataset used for this model includes 286 instances of patient data collected
 - *Breast*: the postion of the tumor (left or right breast)
 - *Breast Quadrant*: the quadrant of the breast where the tumor is present
 - *Irradiation*: wether radiation therapy has been used as treatment to destroy cancer cells
-### ML Model
-The model will be a **Classification** model
+### The Model
+This model is a **Classification** model. We want to predict whether a patient could get a recurrence of the cancer (*no-recurrence-events, recurrence-events*). The model can then be further implemented to predict using %.
 
 <br>
 <br>
