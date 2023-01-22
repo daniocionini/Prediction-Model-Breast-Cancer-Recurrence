@@ -42,7 +42,7 @@ The dataset used for this model includes 286 instances of patient data collected
 - *Breast Quadrant*: the quadrant of the breast where the tumor is present
 - *Irradiation*: wether radiation therapy has been used as treatment to destroy cancer cells
 ### The Model
-This model is a **Classification** model. We want to predict whether a patient could get a recurrence of the cancer (*no-recurrence-events, recurrence-events*). The model can then be further implemented to predict using %.
+This model is a **Classification** model. We want to predict whether a patient could get a recurrence of the cancer (*no-recurrence-events, recurrence-events*).
 
 <br>
 <br>
