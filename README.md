@@ -50,6 +50,9 @@ To measure the model's performance and accuracy I used f1-score, ROC curve and A
 #### Sample Size
 I created a learning curve to evaluate if the sample size was enough data to train the model.
 
+#### Dataset
+The dataset includes a total of 286 instances of patient data. (population data)
+
 <br>
 <br>
 <br>
