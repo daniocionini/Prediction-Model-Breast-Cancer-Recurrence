@@ -42,7 +42,10 @@ The dataset used for this model includes 286 instances of patient data collected
 - *Breast Quadrant*: the quadrant of the breast where the tumour is present
 - *Irradiation*: whether radiation therapy has been used as a treatment to destroy cancer cells
 ### The Model
-This model is a **Classification** model. We want to predict whether a patient could get a recurrence of cancer (*no-recurrence-events, recurrence-events*).
+This model is a **Classification** model. I want to predict whether a patient could get a recurrence of cancer (*no-recurrence-events, recurrence-events*).
+
+#### Measure Performance
+- To measure the model's performance and accuracy I used f1-score, ROC curve and AUC.
 
 <br>
 <br>
