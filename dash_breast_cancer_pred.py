@@ -31,100 +31,250 @@ app = Dash(external_stylesheets=[dbc.themes.DARKLY])
 
 
 
+
+
+
+
 # Set up the app layout
-geo_dropdown = dcc.Dropdown(options=data['class'].unique(),
-                            value='no-recurrence-events',
+class_dropdown = dcc.Dropdown(options=data['class'].unique(),
+                            value='recurrence-events',
                             style={"background-color":"#999999", "color": "black"})
 
 
 
 
-app.layout = html.Div(children=[
-html.Div(children=[
-    html.H1(children='Breast Cancer Dashboard'),
-    geo_dropdown,
-    dcc.Graph(id='price-graph', style={"margin-left":"350px", "margin-right":"350px"})
-]),
-html.Div(children=[
-    html.H1(children=''),
-    dcc.Graph(id='second-graph', style={"margin-left":"350px", "margin-right":"350px"})
-]),
-html.Div(children=[
-    html.H1(children=''),
-    dcc.Graph(id='third-graph', style={"margin-left":"350px", "margin-right":"350px"})
-])
-])
+
+app.layout = dbc.Row([
+    dbc.Col([
+        html.Div(children=[
+            html.Div(children=[
+                class_dropdown,
+                html.H5(children='Recurrence Event by Age group and Menopause state of the Patient'),
+                dcc.Graph(id='first-graph')
+            ]),
+            html.Div(children=[
+                html.H5(children='Recurrence Event by Nb. of Invaded Lymph Nodes and Lymph Nodes with Pierced Capsule'),
+                dcc.Graph(id='sixth-graph')
+            ])
+        ])
+    ], width=5),
+    dbc.Col([
+        html.Div(children=[
+            html.Div(children=[
+                html.H6(children='Recurrence Event by Degree of Malignancy and Size of the Tumour'),
+                dcc.Graph(id='second-graph')
+            ]),
+            html.Div(children=[
+                html.H6(children='Recurrence Event by Radiation Therapy and Degree of Malignancy fo the Tumor'),
+                dcc.Graph(id='third-graph')
+            ])
+        ])
+    ], width=3),
+    dbc.Col([
+        html.Div(children=[
+            html.Div(children=[
+                html.H6(children='Recurrence Event by Breast Location and Tumour Size'),
+                dcc.Graph(id='fourth-graph')
+            ]),
+            html.Div(children=[
+                html.H6(children='Recurrence Event by Radiation Therapy and Nb. of Invaded Lymph Nodes'),
+                dcc.Graph(id='fifth-graph')
+            ])
+        ])
+    ], width=3)
+], justify='center')
 
 
 
-# Set up the callback function
+
+
+
+
+
+
+
+
+
+
+
+
+
 @app.callback(
-    Output(component_id='price-graph', component_property='figure'),
-    Input(component_id=geo_dropdown, component_property='value')
+    Output(component_id='first-graph', component_property='figure'),
+    Input(component_id=class_dropdown, component_property='value')
 )
-def update_graph(selected_geography):
-    filtered_avocado = data[data['class'] == selected_geography]
-    line_fig = px.density_contour(filtered_avocado,
-                       x='deg_malig', y='deg_malig',
-                       color='node_caps',
+def update_graph(selected_class):
+    filtered_class = data[data['class'] == selected_class]
+    bar_fig = px.histogram(filtered_class,
+                       x='age',
+                       color='menopause',
+                       nbins=6,
                        labels={
-                        "deg_malig": "Degree of Malignancy",
-                        "node_caps": "Lymph Node Capsules Perforated"
+                        "age": "Age Group of the Patient",
+                        "menopause": "Menopause State of the Patient"
                        },
-                       title=f'based on {selected_geography}')
-    line_fig.update_layout({
+                       title=f'Watching the filtered Class_: {selected_class}')
+    bar_fig.update_layout({
         'plot_bgcolor':'rgba(0, 0, 0, 0)',
         'paper_bgcolor':'rgba(0, 0, 0, 0)',
-    }, font_color = 'white')
-    return line_fig
+    }, font_color = 'white', barmode='overlay')
+    return bar_fig
 
 
 
-# Set up the callback function
+
+
+
+
+
+
 @app.callback(
     Output(component_id='second-graph', component_property='figure'),
-    Input(component_id=geo_dropdown, component_property='value')
+    Input(component_id=class_dropdown, component_property='value')
 )
-def update_graph(selected_geography):
-    filtered_avocado = data[data['class'] == selected_geography]
-    line_fig = px.funnel(filtered_avocado,
-                       x='deg_malig', y='deg_malig',
-                       color='breast_quad',
+def update_graph(selected_class):
+    filtered_class = data[data['class'] == selected_class]
+    bar_fig = px.histogram(filtered_class,
+                       x='deg_malig',
+                       color='tumour_size',
+                       nbins=6,
                        labels={
                         "deg_malig": "Degree of Malignancy",
-                        "breast_quad": "Breast Quadrant"
+                        "tumour_size": "Size of the Tumour (mm)"
                        },
-                       title=f'based on {selected_geography}')
-    line_fig.update_layout({
+                       title=f'Watching the filtered Class_: {selected_class}')
+    bar_fig.update_layout({
         'plot_bgcolor':'rgba(0, 0, 0, 0)',
         'paper_bgcolor':'rgba(0, 0, 0, 0)',
-    }, font_color = 'white')
-    return line_fig
+    }, font_color = 'white', barmode='overlay')
+    return bar_fig
 
 
-# Set up the callback function
+
+
+
+
+
+
+
 @app.callback(
     Output(component_id='third-graph', component_property='figure'),
-    Input(component_id=geo_dropdown, component_property='value')
+    Input(component_id=class_dropdown, component_property='value')
 )
-def update_graph(selected_geography):
-    filtered_avocado = data[data['class'] == selected_geography]
-    line_fig = px.bar(filtered_avocado,
-                       x='deg_malig', y='deg_malig',
+def update_graph(selected_class):
+    filtered_class = data[data['class'] == selected_class]
+    bar_fig = px.histogram(filtered_class,
+                       x='deg_malig',
                        color='irrad',
+                       nbins=6,
                        labels={
                         "deg_malig": "Degree of Malignancy",
-                        "irrad": "Radiation Therapy"
+                        "irrad": "Radiation as a Therapy"
                        },
-                       title=f'based on {selected_geography}')
-    line_fig.update_layout({
+                       title=f'Watching the filtered Class_: {selected_class}')
+    bar_fig.update_layout({
         'plot_bgcolor':'rgba(0, 0, 0, 0)',
         'paper_bgcolor':'rgba(0, 0, 0, 0)',
-    }, font_color = 'white')
-    return line_fig
+    }, font_color = 'white', barmode='overlay')
+    return bar_fig
+
+
+
+
+
+
+
+
+@app.callback(
+    Output(component_id='fourth-graph', component_property='figure'),
+    Input(component_id=class_dropdown, component_property='value')
+)
+def update_graph(selected_class):
+    filtered_class = data[data['class'] == selected_class]
+    bar_fig = px.histogram(filtered_class,
+                       x='tumour_size',
+                       color='breast',
+                       nbins=6,
+                       labels={
+                        "tumour_size": "Size of the Tumour (mm)",
+                        "breast": "Location of the Breast"
+                       },
+                       title=f'Watching the filtered Class_: {selected_class}')
+    bar_fig.update_layout({
+        'plot_bgcolor':'rgba(0, 0, 0, 0)',
+        'paper_bgcolor':'rgba(0, 0, 0, 0)',
+    }, font_color = 'white', barmode='overlay')
+    return bar_fig
+
+
+
+
+
+
+
+
+@app.callback(
+    Output(component_id='fifth-graph', component_property='figure'),
+    Input(component_id=class_dropdown, component_property='value')
+)
+def update_graph(selected_class):
+    filtered_class = data[data['class'] == selected_class]
+    bar_fig = px.histogram(filtered_class,
+                       x='inv_nodes',
+                       color='irrad',
+                       nbins=6,
+                       labels={
+                        "irrad": "Radiation as a Therapy",
+                        "inv_nodes": "Nb. of Invaded Lymph Nodes"
+                       },
+                       title=f'Watching the filtered Class_: {selected_class}')
+    bar_fig.update_layout({
+        'plot_bgcolor':'rgba(0, 0, 0, 0)',
+        'paper_bgcolor':'rgba(0, 0, 0, 0)',
+    }, font_color = 'white', barmode='overlay')
+    return bar_fig
+
+
+
+
+
+
+
+@app.callback(
+    Output(component_id='sixth-graph', component_property='figure'),
+    Input(component_id=class_dropdown, component_property='value')
+)
+def update_graph(selected_class):
+    filtered_class = data[data['class'] == selected_class]
+    bar_fig = px.histogram(filtered_class,
+                       x='inv_nodes',
+                       color='node_caps',
+                       nbins=6,
+                       labels={
+                        "inv_nodes": "Nb. of Invaded Lymph Nodes",
+                        "node_caps": "Lymph Node Capsules Perforated"
+                       },
+                       title=f'Watching the filtered Class_: {selected_class}')
+    bar_fig.update_layout({
+        'plot_bgcolor':'rgba(0, 0, 0, 0)',
+        'paper_bgcolor':'rgba(0, 0, 0, 0)',
+    }, font_color = 'white', barmode='overlay')
+    return bar_fig
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 # Run local server
 if __name__ == '__main__':
     app.run_server(debug=True)
+
