@@ -5,7 +5,7 @@ Breast cancer is the most commonly diagnosed cancer among women around the world
 ### What Causes Breast Cancer?
 There are many risk factors known to cause breast cancer such as lifestyle-related risk factors and changes or mutations in genes. Certain inherited gene changes can greatly increase the risk of developing certain cancers.<br>The BRCA genes (*BRCA1 and BRCA2*) are tumour suppressor genes, a mutation in these genes can interrupt the task to suppress abnormal cell growth, and cancer is more likely to develop.
 ### Types of Breast Cancer Overview
-Most breast cancers are carcinomas, which are tumours that start in the epithelial cells that line organs and tissues throughout the body.<br>The tumour can also be considered **In situ** (cancer has spread) or also **invasive** to describe any type of breast cancer that has spread into surrounding breast tissue.
+Most breast cancers are carcinomas, which are tumours that start in the epithelial cells that line organs and tissues throughout the body.<br>The tumour can also be considered **In situ** or also **invasive** to describe any type of breast cancer that has spread into surrounding breast tissue.
 ### Key Statistics for Breast Cancer
 The key survival element for breast cancer is early detection through screening and increased awareness, as well as better treatments.<br> At this time there are more than 3.8 million breast cancer survivors in the United States, including women still being treated and those who have completed treatment. At this time, the relative survival rate for 5 years is about 90%, depending on the type of breast cancer diagnosed.
 ### Immunotherapy for Breast Cancer
