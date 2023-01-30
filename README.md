@@ -57,14 +57,10 @@ The dataset includes a total of 286 instances of patient data. (population data)
 <br>
 <br>
 
-*Reference Links:*<br>
-https://www.linkedin.com/pulse/using-machine-learning-techniques-predict-recurrence-breast-alva/
-https://archive.ics.uci.edu/ml/datasets/Breast+Cancer
-https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer/
-https://github.com/NanditaA/ML-Supervised-Classification
-https://www.cancer.org/cancer/breast-cancer.html
-https://www.cancer.org/cancer/breast-cancer/living-as-a-breast-cancer-survivor/follow-up-care-after-breast-cancer-treatment.html
-https://www.cancer.org/cancer/breast-cancer/living-as-a-breast-cancer-survivor/can-i-lower-my-risk-of-breast-cancer-progressing-or-coming-back.html
-https://www.kaggle.com/code/najibmozahem/breast-cancer-python
-https://www.scss.tcd.ie/publications/theses/diss/2012/TCD-SCSS-DISSERTATION-2012-007.pdf
-https://www.cancer.org/cancer/breast-cancer/treatment/surgery-for-breast-cancer/lymph-node-surgery-for-breast-cancer.html#:~:text=In%20this%20procedure%2C%20anywhere%20from,done%20in%20a%20second%20operation.
+***Reference Links:***<br>
+[*Dataset Reference*]: https://archive.ics.uci.edu/ml/datasets/Breast+Cancer <br>
+[*Dataset*]: https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer/ <br>
+[*Medical Paper 'cancer.org'*]: https://www.cancer.org/cancer/breast-cancer.html <br>
+[*Medical Paper 'cancer.org'*]: https://www.cancer.org/cancer/breast-cancer/living-as-a-breast-cancer-survivor/follow-up-care-after-breast-cancer-treatment.html <br>
+[*Medical Paper 'cancer.org'*]: https://www.cancer.org/cancer/breast-cancer/living-as-a-breast-cancer-survivor/can-i-lower-my-risk-of-breast-cancer-progressing-or-coming-back.html <br>
+[*Medical Paper 'cancer.org'*]: https://www.cancer.org/cancer/breast-cancer/treatment/surgery-for-breast-cancer/lymph-node-surgery-for-breast-cancer <br>
