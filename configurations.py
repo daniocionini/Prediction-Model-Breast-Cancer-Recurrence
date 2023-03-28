@@ -28,6 +28,7 @@ data.columns = ['class', 'age', 'menopause', 'tumour_size', 'inv_nodes', 'node_c
 data = data.replace("?", np.nan)
 
 
+
 # --------------------- Train & Test Split
 X = data.drop(['class'], axis = 1)
 y = data['class']
